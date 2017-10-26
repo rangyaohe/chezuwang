@@ -124,6 +124,25 @@
 			}
 		},
 		mounted(){
+//			$(document).click(function(){
+//				$.ajax({
+//					type:"get",
+//					url:"api/sigin",
+//					data:{
+//						way:"email",
+//						name:"十7",
+//						password:"123",
+//						phonenum:"666",
+//						email:"15989878@qq.com",
+//						havecar:1,
+//						shop:0,
+//					},
+//					success:function(data){
+//						var data =$.parseJSON(data);
+//						console.log(data.err)
+//					}
+//				});
+//			})
 			// 对勾
 			var _this = this;
 			$(".checked").click(function() {
@@ -249,9 +268,7 @@
 					$(".j_content_G .hint").css("display","none");
 				}
 			});
-			
 			// 手机号注册验证
-			
 			$(".j_phone_content input").focus(function() {
 				$(".j_phone_content").css("background","#fdf0e3");
 				$(".j_phone_content .default").css("display","none");

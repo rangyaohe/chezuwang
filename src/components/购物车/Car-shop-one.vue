@@ -95,7 +95,7 @@
 						<span>动态码</span> <input type="password" class="password"/>
 					</div>
 					<div class="rem_phone">
-						<input type="checkbox" name="" id="" value="" /><sapn>记住手机</sapn>
+						<input type="checkbox" name="" id="" value="" /><span>记住手机</span>
 					</div>
 					
 					<div class="btn">

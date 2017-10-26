@@ -128,11 +128,18 @@
 		mounted(){
 			$(document).click(function(){
 				$.ajax({
-					type:"get",
+					type:"post",
 					url:"api/login",
 					data:{
-						name:"张三"
-					}
+						name:"ikkkklk",
+						way:"password",
+						age:10
+					},
+					dataType:"json"
+//					success:function (data) {
+//						alert(data);
+//						console.log(data)
+//                  }
 				});
 			})
 			//定义一个函数,在页面加载时查看是否有缓存,如果有的话添加到输入框中
@@ -180,16 +187,21 @@
 				//判断是否记住账号
 				if(_this.accbol){
 					window.localStorage.account=$(".accIput").val();
-				}else{//删除缓存
-//					window.localStorage.removeItem(account);
+				}else if(window.localStorage.account){//删除缓存
+					window.localStorage.removeItem(["account"]);
 				}
 				//判断是否记住密码
 				if(_this.pasbol){
 					window.localStorage.passwords=$(".pasIput").val();
 				}else{
-//					window.localStorage.removeItem(passwords);
+					window.localStorage.removeItem(["passwords"]);
 				}
 				alert("登录成功")
+				$.ajax({
+					type:"post",
+					url:"api/",
+					async:true
+				});
 			})
 			//手机登录
 			$(".login_phon_btn").click(function(){
@@ -197,7 +209,7 @@
 				if(_this.phobol){
 					window.localStorage.phone=$(".phoIput").val();
 				}else{
-//					window.localStorage.removeItem(phone)
+					window.localStorage.removeItem(["phone"]);
 				}
 				alert("登录成功")
 			})

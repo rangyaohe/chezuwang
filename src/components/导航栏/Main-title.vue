@@ -224,7 +224,7 @@
 						<router-link to="/forum" class="i_serve">社区</router-link>
 					</div>
 					<div class="i_nav_right">
-						<router-link to="" class="i_cart"> 购物车</router-link>
+						<router-link to="/shop" class="i_cart"> 购物车</router-link>
 						<router-link to="" class="i_browse">最近浏览</router-link>
 						<router-link to="/mycar/indent" class="i_vehicles">我的车族</router-link>
 						<router-link to="/login" class="i_enter">登录</router-link>
