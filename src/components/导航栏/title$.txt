@@ -1,0 +1,38 @@
+//				$(".i_banner .i_close").click(function() {
+//					$(".i_banner img").css("display", "none");
+//					$(".i_banner .i_close").css("display", "none");
+//				}),
+//		$(".i_cut .i_close").click(function() {
+//			$(".i_left_list").css("display", "none");
+//			$(".i_left_list .i_close").css("display", "none");
+//		}),
+//		$(".iProvince").click(function() {
+//			$(".i_coreCity").css("display", "none");
+//			$(".iProvince").css({
+//				"color": "#fff"
+//			}, {
+//				"text-decoration": "underline"
+//			});
+//			$(".iCity").css({
+//				"color": "#21a1fb"
+//			}, {
+//				"text-decoration": "none"
+//			});
+//		}),
+//		$(".iCity").click(function() {
+//			$(".i_coreCity").css("display", "block");
+//			$(".iProvince").css({
+//				"color": "#21a1fb"
+//			}, {
+//				"text-decoration": "none"
+//			});
+//			$(".iCity").css({
+//				"color": "#fff"
+//			}, {
+//				"text-decoration": "none"
+//			});
+//		}),
+//		$(".i_city").click(function() {
+//			$(".i_left_list").css("display", "block");
+//		})
+//				

@@ -1,0 +1,72 @@
+.k_hint{
+	width: 979px;
+	height: 39px;
+	margin: 10px auto 0;
+	border: 1px solid #c5c5c5;
+	background-color: #fff;
+	position: relative;
+	/*display: none;*/
+}
+.k_hint span{
+	display: inline-block;
+	font-size: 14px;
+	margin: 10px 0 0 13px;
+}
+.k_hint span a{
+	text-decoration: none;
+	color: #1978cf;
+}
+.k_hint img{
+	position: absolute;
+	right: 10px;
+	top: 11px;
+}
+.k_title {
+	width: 977px;
+	/*height: 594px;*/
+	/*margin-left: 92px;*/
+	margin: 10px auto 0;
+}
+
+
+
+.k_title .gg{
+	position: relative;
+	text-decoration: none;
+	display: inline-block;
+	width: 80px;
+	margin-left: -5px;
+	margin-right: 5px;
+	height: 36px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-top: 1px solid #c5c5c5;
+	border-left: 1px solid #c5c5c5;
+	border-right: 1px solid #c5c5c5;
+	text-align: center;
+	line-height: 36px;
+	color: #1978cf;
+	background: #eeeeee;
+	/*z-index: 1000;*/
+}
+.k_title .k_myIndent {
+	position: relative;
+	background: #fff;
+	color: black;
+	/*margin-left: -5px;*/
+	z-index: 10;
+}
+
+/*.k_title .k_myGood,
+.k_myCollect,
+.k_mySurplus,
+.k_myCarry,
+.k_myChit,
+.k_myScore,
+.k_mySet {
+	color: #1978cf;
+	background: #eeeeee;
+}*/
+
+
+

@@ -1,0 +1,123 @@
+<！DOCTYPE html >  
+< html lang = “en” >   
+< head >  
+    < meta charset = “UTF-8” >   
+    < 标题> 君乐科技JS分享代码</ 标题>  
+</ head >  
+< body style = “background：＃e5e6e6;” >   
+< section >  
+    < div >  
+    < div class = “share-box” >   
+        < div >  
+            < p > 点击下方图标直接分享</ p >         
+            < ul >  
+                <！ - 新浪微博 - >  
+                < li > < a href = “javascript：void（（function（s，d，e，r，l，p，t，z，c）{var％20f ='http：//vtsina.com.cn/share /share.php?appkey=真实的的AppKey 'U = Z || d.location，p值= [ '＆URL ='，E（u）的， '＆标题='，E（T || d.title），' ＆源=”，E（R）， '＆sourceUrl ='，E（L）， '＆含量='，C || 'GB2312'， '＆PIC ='，E（p || ''）]。加入（ '' ）;！函数％20A（）{如果（window.open（[F，p]。加入（ ''）， 'MB'，['工具栏= 0，状态= 0，可调整大小= 1，宽度= 440，高度= 430，左=”，（s.width-440）/ 2， '顶部='，（s.height-430）/ 2]。加入（ ''）））u.href = [F，p] 。加入（ ''）;};如果（/Firefox/.test（navigator.userAgent的））的setTimeout（A，0）;否则％20A（）;}）（屏幕，文件，encodeURIComponent方法， ''， ''， “HTTP：//www.junlenet。com / uploads / allimg / 150510 / 1-150510104044.jpg'，'君乐科技'，'http：//www.junlenet.com'，'页面编码gb2312 | utf-8默认gb2312'））;“ class = “邀请-kinds2”   > 新浪微博</ a > </ li >  
+                <！ - QQ好友 - >  
+                < li > < a href = “javascript :;” id = “qq_id” target = “_blank” > QQ好友</ a > </ li >      
+                <！ - QQ空间 - >  
+                < li > < a href = “javascript :;” onclick  =  “qqZone（）” > QQ空间</ a > </ li >     
+                <！ - 腾讯微博 - >  
+                < li > < a href = “javascript :;” onclick  =  “tencentWeiBo（）” > 腾讯微博</ a > </ li >     
+            </ ul >  
+        </ div >  
+        < div class = “ewm” id = “qrcode” > </ div >    
+        <！ - 参考：jquery.qrcode.js - >  
+    </ div >  
+    </ div >  
+</ section >  
+< hr >  
+< h3 >直接使用百度分享</ h3 >  
+< DIV 类= “bdsharebuttonbox” > < 一个HREF = “＃” 类= “bds_more” 数据-CMD = “更多” > </ 一> < 一个HREF = “＃” 类= “bds_weixin” 数据-CMD = “维信“ title = ”分享到微信“ > </ a > < a href = ”＃“ class = ”bds_tsina“data-cmd = “tsina” 标题            = “分享到新浪微博” > </ 一> < 一个HREF = “＃” 类= “bds_qzone” 数据-CMD = “QQ空间” 标题= “分享到QQ空间” > </ 一> < 一个HREF = “ ＃“ class = ”bds_tqq“ data-cmd = ”tqq“ title = ”分享到腾讯微博“ > </ a > </ div >          
+//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+〜（-new Date（）/ 36e5）]; </ script >  
+< script type = “text / javascript” src = “http://code.jquery.com/jquery-1.8.0.min.js” > </ script >    
+< script >  
+  var  url  =  “http://www.junlenet.com” ;  
+    var  desc_  =  “君乐科技” ;        
+    功能tencentWeiBo（）{  
+         var  _url  =  “http://www.junlenet.com” ;     
+         var  _showcount  =  0 ;  
+         var  _summary  =  “” ;  
+         var  _title  =  desc_ ;  
+         var  _site  =  “http://www.junlenet.com” ;    
+         var  _width  =  “600px” ;  
+         var  _height  =  “800px” ;  
+         var  _pic  =  “http://www.junlenet.com/uploads/allimg/150510/1-150510104044.jpg” ;  
+         var _shareUrl  = 'http :  //share.vtqq.com/index.php?c = share&a =  index ' ;  
+         _shareUrl + ='＆title ='+ encodeURIComponent（_title || document.title）; //分享的标题  
+         _shareUrl + ='＆url ='+ encodeURIComponent（_url || location.href）; //分享的链接  
+         _shareUrl + = '＆的AppKey = 5bd32d6f1dff4725ba40338b233ff155 '; //在腾迅微博平台创建应用获取微博的AppKey  
+         // _ shareUrl + ='＆site = '+ encodeURIComponent（_site ||' '）; //分享来源  
+         _shareUrl + ='＆pic ='+ encodeURIComponent（_pic ||' '）; //分享的图片，如果是多张图片，则定义var _pic =' 图片url1 |图片url2 |图片url3 ....'  
+         window.open（_shareUrl，' width = '+ _width +' ，height = '+ _height +' ，left = '+（screen.width-_width）/ 2 +' ，top = '+（screen.height-_height）/ 2 +' ，toolbar = no ，menubar = no ，scrollbars = no ，resizable = 1 ，location = no ，status = 0 '）;  
+    }      
+    var  top  =  window .screen.height / 2 - 250;    
+    var  left  =  window .screen.width / 2 - 300;    
+    var  height  =  window .screen.height;  
+    var  width  =   window .screen.width;   
+    / *标题是标题，RLINK链接，摘要内容，现场分享来源，PIC分享图片路径，分享到新浪微博* /    
+    function shareTSina（）{    
+        var  title  =  desc_ ;  
+        var    rLink  =  “http://www.junlenet.com” ;  
+        var  backUrl  =  “http://wx.hengfu100.com/member/c_friend” ;  
+        var  site  =  desc_ ;  
+        var  pic  =  “http://www.junlenet.com/uploads/allimg/150510/1-150510104044.jpg” ;  
+        window.open（ “http://service.weibo.com/share/share.php？PIC = ” + encodeURIComponent方法（PIC）+ “ ＆标题=” +     
+        encodeURIComponent方法（title.replace（/ / g的， “ ”）.replace（/ < BR  \ /> / g的，“”））+ “＆URL =” + encodeURIComponent方法（RLINK），    
+        “分享至新浪微博”，    
+        “ 高度= 500 ，宽度= 600 ，顶部= ” +顶部+ “ 左= ” +左+ “ 工具栏= 没有，菜单栏= 没有，滚动条= 没有，  可调整大小= 没有，位置= 没有，  状态= 无”） ;    
+    }    
+    
+     function qqFriend（）{  
+            var  p  = {  
+                url：'http://www.junlenet.com'，/ *获取URL，可加上来自分享到QQ标识，方便统计* /  
+                说明： ''，  
+                //标题：'新玩法，再不来你就出！'，/ *分享标题（可选）* /  
+                标题：desc_，  
+                总结：''，/ *分享摘要（可选）* /  
+                图片：'http://www.junlenet.com/uploads/allimg/150510/1-150510104044.jpg'，/ *分享图片（可选）* /  
+                flash：''，/ *视频地址（可选）* /  
+                网站：http://www.junlenet.com，/ *分享来源（可选）如：QQ分享* /  
+                风格：'201'，  
+                宽度：32，  
+                身高：32  
+            };  
+            var  s  = [];  
+            for（var i in p）{  
+                s.push（i +'='+ encodeURIComponent（p [i] ||''））;  
+            }  
+            var  url  =  “http://connect.qq.com/widget/shareqq/index.html？” + s.join（ '＆'）;  
+            返回url;  
+            // window.location.href  =  url ;  
+            //document.write（[” < 一类= “qcShareQQDiv” HREF = “http://connect.qq.com/widget/shareqq/index.html?',s.join('& '），'” > 分享给QQ好友</ a > '] .join（''））;     
+        }  
+      
+    function qqZone（）{  
+         var  _url  =  “http://www.junlenet.com” ;     
+         var  _showcount  =  0 ;  
+         var  _desc  =  desc_ ;  
+         var  _summary  =  “” ;  
+         var  _title  =  “君乐科技” ;  
+         var  _site  =  “” ;  
+         var  _width  =  “600px” ;  
+         var  _height  =  “800px” ;  
+         var  _summary  =  “” ;  
+         var  _pic  =  “http://www.junlenet.com/uploads/allimg/150510/1-150510104044.jpg” ;  
+         var _shareUrl  =  'http :  //sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey ？' ;  
+         _shareUrl + =' url ='+ encodeURIComponent（_url || document.location）; //参数的URL设置分享的内容链接|默认当前页的位置  
+         _shareUrl + ='＆showcount ='+ _showcount || 0 ; //参数showcount是否显示分享总数，显示： '1'，不显示： '0'，默认不显示  
+         _shareUrl + ='＆desc = '+ encodeURIComponent（_desc ||' 分享的描述'）; //参数说明设置分享的描述，可选参数  
+         // _ shareUrl + ='＆summary = '+ encodeURIComponent（_summary ||' 分享摘要'）; //参数汇总设置分享摘要，可选参数  
+         _shareUrl + ='＆title ='+ encodeURIComponent（_title || document.title）; //参数标题设置分享标题，可选参数  
+         // _ shareUrl + ='＆site = '+ encodeURIComponent（_site ||' '）; //参数现场设置分享来源，可选参数  
+         _shareUrl + ='＆pics = '+ encodeURIComponent（_pic ||' '）; //参数图片设置分享图片的路径，多张图片以“|”隔开，可选参数  
+        window.open（_shareUrl，' width = '+ _width +' ，height = '+ _height +' ，top = '+（screen.height-_height）/ 2 +' ，left = '+（screen.width-_width）/ 2 +' ，toolbar = no ，menubar = no ，scrollbars = no ，resizable = 1 ，location = no ，status = 0 '）;   
+    }  
+      
+     $（函数（）{     
+        var  url  =  qqFriend （）;  
+        $（ “＃qq_id”）ATTR（ “HREF”，URL）。      
+     }）  
+</ script >  
+</ body >  
+</ html >  
