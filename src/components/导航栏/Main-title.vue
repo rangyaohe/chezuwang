@@ -218,7 +218,7 @@
 					<div class="i_nav_left">
 						<router-link to="/" class="i_serve">首页</router-link>
 						<router-link to="/service" class="i_serve">服务</router-link>
-						<router-link to="" class="i_serve">商家</router-link>
+						<router-link to="/merchant" class="i_serve">商家</router-link>
 						<router-link to="/groupon" class="i_serve">团购</router-link>
 						<router-link to="" class="i_serve">商城</router-link>
 						<router-link to="/forum" class="i_serve">社区</router-link>
@@ -708,7 +708,7 @@
 	
 	.i_btn {
 		width: 63px;
-		height: 43px;
+		height: 45px;
 		background-color: #2a4e91;
 		border: none;
 		color: #fff;

@@ -37,6 +37,8 @@ import Chit from './components/我的车族/Mycar-chit'
 import Score from './components/我的车族/Mycar-score'
 import Set from './components/我的车族/Mycar-set'
 import Indent from './components/我的车族/Mycar-indent'
+// 商家
+import Merchant from './components/商家/Merchant'
 Vue.use(VueRouter)
 Vue.config.productionTip = false
 
@@ -89,6 +91,11 @@ const router = new VueRouter({
 				path: "/service/hairdressing",
 				component: Hairdressing
 			}]
+		},
+		// 商家
+		{
+			path:'/merchant',
+			component:Merchant
 		},
 		//详情页
 		{
