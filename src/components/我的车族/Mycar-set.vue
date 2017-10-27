@@ -206,7 +206,7 @@
 		position: relative;
 		width: 977px;
 		margin: 0px auto 38px;
-		z-index: 2;
+		z-index: 100;
 	}
 	.set{
 			position: relative;
