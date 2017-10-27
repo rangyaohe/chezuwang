@@ -428,6 +428,7 @@
 		height: 100px;
 		margin: 0 auto;
 		position: relative;
+		z-index: 104;
 	}
 	.i_center .i_center_left {
 		position: absolute;

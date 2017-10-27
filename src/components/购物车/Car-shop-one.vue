@@ -11,7 +11,7 @@
 				<div class="liucheng">
 					
 					<img src="../../assets/car-shop/mydd.png" alt="" />
-					<span class="log">现在<a href="">登录</a>,您的购物车商品将被永久保存</span>
+					<span class="log">现在<a href="/login">登录</a>,您的购物车商品将被永久保存</span>
 				</div>
 			</div>
 			<!--购物列表-->

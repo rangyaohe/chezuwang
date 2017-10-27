@@ -3,7 +3,7 @@
 		<div class="login_title">
 			<h2>登录
 				<span>尚未注册?</span>
-				<a href="###">免费注册</a>
+				<a href="/signin">免费注册</a>
 			</h2>
 		</div>
 		<!--登录输入-->
@@ -67,7 +67,7 @@
 					<!--<div class="login_ever" v-for="item in loginArr">
 						<img src="../../assets/car-login/2.png"/>
 					</div>-->
-					<a class="login_ever">
+					<a class="login_ever" href="http://web2.qq.com/">
 						<img src="../../assets/car-login/1.png"/>QQ
 					</a>
 					<a class="login_ever">

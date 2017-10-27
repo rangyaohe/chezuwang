@@ -46,6 +46,8 @@
 		display: inline-block;
 		vertical-align: top;
 		margin-top: 10px;
+		position: relative;
+		z-index: 102;
 	}
 	#cont{
 		width: 976px;
