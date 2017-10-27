@@ -215,6 +215,7 @@
 		width: 977px;
 		margin: 0px auto 38px;
 		z-index: 100;
+<<<<<<< HEAD
 	}
 	
 	.set {
@@ -227,6 +228,8 @@
 		margin-left: -5px;
 		margin-top: -1px;
 		background-color: #fff;
+=======
+>>>>>>> 1038d45adced51d6017d4820262a79b2c7b421f8
 	}
 	
 	.set .aa {
