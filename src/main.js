@@ -37,15 +37,15 @@ import Chit from './components/我的车族/Mycar-chit'
 import Score from './components/我的车族/Mycar-score'
 import Set from './components/我的车族/Mycar-set'
 import Indent from './components/我的车族/Mycar-indent'
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 // 商家
 import Merchant from './components/商家/Merchant'
-=======
+//=======
 //三级联动
 import Distpicker from 'v-distpicker'
 Vue.component('v-distpicker', Distpicker)
 
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 Vue.use(VueRouter)
 Vue.config.productionTip = false
 
