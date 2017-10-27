@@ -50,7 +50,31 @@
 						<td>¥<span class="all_sum">{{sum_price*u_price}}</span></td>
 						<td></td>
 					</tr>
-			</table>			
+			</table>	
+			
+			</div>
+			<!--收货地址-->
+			<div class="shopAdress">
+				<span class="shopAdress_title">收货地址</span>
+				<!--省市区三级联动-->
+				<span class="liandong">省市区: </span> <span class="ssx"><v-distpicker></v-distpicker></span><br />
+				
+				<span class="st">街道地址: </span><input type="text" class="street" /><br />
+				<span class="waring ws"><img src="../../assets/car-shop/警告按钮.png"/></span><span class="text st">请填写街道地址,最少5个字,最多不能超过60个字,不能全部为数字</span><br />
+				<span class="postcode">邮政编码: </span><input type="text" class="postcode_" /><br />
+				<span class="waring wpp"><img src="../../assets/car-shop/警告按钮.png"/></span><span class="text ppt">邮政编码填写有误,请输入6位邮政编码</span><br />
+				<span class="resivename">收货人姓名: </span><input type="text" class="resivename_" /><br />
+				<span class="waring wn"><img src="../../assets/car-shop/警告按钮.png"/></span><span class="text wt">请正确填写姓名,最少不能低于2字,最多不能超过15字</span><br />
+				<span class="phone">电话号码: </span><input type="text" class="phone_" /><br />
+				<span class="waring wp"><img src="../../assets/car-shop/警告按钮.png"/></span><span class="text pt">请正确填写手机号</span><br />
+				<a href="###" class="ALipay">使用支付宝物流地址</a><br />
+				<span class="hope">希望送货的时间:</span><br />
+				<input type="radio" class="radio" name="yy"/><span class="time_to">只工作日送货(双休日,假日不用送) (注:写字楼/商用地址客户请选择)</span><br />
+				<input type="radio" class="radio" name="yy"/><span class="time_to">只双休日,假日送货(工作日不用送)</span><br />
+				<input type="radio" class="radio" name="yy"/><span class="time_to">学校地址/地址白天没人,请尽量安排其他时间送货(注:特别安排可能会超出预计送货天数)</span><br />
+				<input type="radio" class="radio" name="yy"/><span class="time_to">工作日,双休日,节假日皆可送货</span><br />
+				<span class="explain">配送说明(快递公司有商家根据情况选择,请不要制定,其他要求会尽量协调)</span><br />
+				<textarea name="" rows="" cols="" class="explain_text"></textarea>
 			</div>
 			<button class="submit">提交订单</button>	
 		</div>
@@ -92,7 +116,7 @@
 					<div class="p_p">
 						<span>手机号</span> <input type="tel" class="phone_num" /><br />
 						<button class="dtm">免费获取手机动态码</button><br />
-						<span>动态码</span> <input type="password" class="password"/>
+						<span>动态码</span> <input type="text" class="password"/>
 					</div>
 					<div class="rem_phone">
 						<input type="checkbox" name="" id="" value="" /><span>记住手机</span>
@@ -117,6 +141,7 @@
 		
 </template>
 <script>
+	import Distpicker from 'v-distpicker'
 	export default {
 		name:"shopcar",
 		data(){
@@ -124,8 +149,8 @@
 				sum_price:1,
 				u_price:58,
 			}
-			
 		},
+
 		mounted(){
 			var _this = this;
 			//删除购物列表
@@ -154,20 +179,100 @@
 			$(".pptt").click(function () {
 				$(".putongdenglu").css("display","block");
 				$(".yanzhengmalog").css("display","none");
-			})
+			});
 			//动态码登录方式
 			$(".dddtm").click(function () {
 				$(".putongdenglu").css("display","none");
 				$(".yanzhengmalog").css("display","block");
-			})
+			});
+			//验证手机号码
+			var _this = this;
+			$(".phone_num").blur(function () {
+				var reg_num = /^1[3|4|5|8][0-9]\d{4,8}$/;
+				var num = $(".phone_num").val();
+				if(!(reg_num.test(num))){
+					$(this).css("border-color","red");
+					alert("请输入正确的手机号码!!!!!!")
+				}else{
+					$(this).css("border-color","#C5C5C5");
+				}
+			});
+			
+			//获取动态码
+			$(".dtm").click(function () {
+				var time = 60;
+				var timer = setInterval(function () {
+					time--;
+					$(".dtm").html(time+"s后重新获取");
+					if(time<=0){
+						clearInterval(timer);
+					}
+					
+					
+				},1000);
+			});
 			//取消
 			$(".qx").click(function () {
 				$(".mark").css("display","none");
-			})
+			});
 			//提交订单提示登录
 			$(".submit").click(function () {
 				$(".mark").css("display","block");
+			});
+			//收货地址正则验证
+			var nulls="";
+			$(".street_").blur(function () {
+				if($(".street_").val()==nulls){
+					$(".ws").css("display","inline-block")
+					$(".st").css("display","inline-block");
+				}
 			})
+			//邮政编码验证
+			
+			$(".postcode_").blur(function () {
+				var post =   /^[1-9][0-9]{5}$/;
+				var post_ = $(".postcode_").val();
+				if(!(post.test(post_))){
+					$(".postcode_").css("border-color","red");
+					$(".wpp").css("display","inline-block")
+					$(".ppt").css("display","inline-block");
+				}else{
+					$(".wpp").css("display","none")
+					$(".ppt").css("display","none");
+					$(".postcode_").css("border-color","#6E6C6C");
+				}
+			});
+			//收货人姓名验证
+			
+				$(".resivename_").blur(function () {
+//					var nameReg = /^[\u4e00-\u9fff\w]{5,16}$/;
+					var nameVal = $(".resivename_").val();
+					if(nameVal==""){
+						$(".wn").css("display","inline-block")
+						$(".wt").css("display","inline-block");
+						$(".resivename_").css("border-color","red");
+					}else{
+						$(".wn").css("display","none")
+						$(".wt").css("display","none");
+						$(".resivename_").css("border-color","#6E6C6C");
+					}
+				});
+				//电话号码验证
+				
+				$(".phone_").blur(function () {
+					var phone = /^1[3|4|5|8][0-9]\d{4,8}$/;
+					var phone_ = $(".phone_").val();
+					if(phone.test(phone_)){
+						$(".wp").css("display","none")
+						$(".pt").css("display","none");
+						$(".resivename_").css("border-color","#6E6C6C");
+					}else{
+						$(".wp").css("display","inline-block")
+						$(".pt").css("display","inline-block");
+						$(".resivename_").css("border-color","red");
+					}
+				});
+				$(".address select").css({"display":"inline-block","width":"100px","height":"19px","font-size":"12px"})
 		}
 	}
 </script>
@@ -179,7 +284,7 @@
 	}
 	.shopcar{
 		width: 977px;
-		height:500px;
+		height:1050px;
 		margin:0 auto;
 		padding: 0;
 		margin-top: 10px;
@@ -461,5 +566,108 @@
 		margin-left: 84px;
 		margin-top: 26px;
 	}
-	
+	/*收货地址*/
+	.shopAdress{
+		margin: 0 auto;
+		margin-top: 10px;
+		width: 917px;
+		height: 578px;
+		border: 1px solid #C5C5C5;
+	}
+	.shopAdress_title{
+		width: 917px;
+		display: inline-block;
+		font-size: 16px;
+		line-height: 33px;
+		text-indent: 12px;
+		border-bottom: 1px solid #C5C5C5;
+		background-color: #f6f6f6;
+	}
+	.liandong{
+		display: inline-block;
+		font-size: 14px;
+		margin-left: 95px;
+		margin-top: 25px;
+		margin-bottom: 20px;
+	}
+	.address{
+		display: inline-block;
+		font-size: 12px;
+	}
+	.waring{
+		display: inline-block;
+		margin-left:145px;
+		vertical-align: middle;
+		color: black;
+		font-size: 12px;
+		margin-right: 3px;
+		display: none;
+	}
+	.text{
+		font-size: 12px;
+		color: red;
+		display: none;
+	}
+	.st,.postcode,.resivename,.phone{
+		font-size: 14px;
+		
+		
+	}
+	.st,.postcode,.phone{
+		margin-left:81px;
+	}
+	.resivename{
+		margin-left: 67px;
+	}
+	.street{
+		width: 453px;
+		height: 22px;
+		border: 1px solid red;
+		border-color: #6E6C6C;
+	}
+	.postcode_,.resivename_,.phone_{
+		width: 163px;
+		height: 22px;
+		border: 1px solid red;
+		border-color: #6E6C6C;
+	}
+	.ALipay{
+		display: inline-block;
+		text-decoration: none;
+		font-size: 12px;
+		color: #2e9cf0;
+		margin-left:65px;
+		margin-top: 23px;
+		font-weight: 200;
+	}
+	.hope{
+		font-size: 16px;
+		font-weight: 500;
+		margin-top: 19px;
+		margin-left: 26px;
+		margin-bottom: 13px;
+		display: inline-block;
+	}
+	.radio{
+		margin-left: 55px;
+	}
+	.time_to{
+		font-size: 12px;
+		font-weight: 200;
+	}
+	.explain{
+		display: inline-block;
+		font-size: 16px;
+		font-weight: 110;
+		margin-left: 27px;
+		margin-top: 15px;
+	}
+	.explain_text{
+		margin-left: 27px;
+		margin-top: 15px;
+		width: 455px;
+		height: 24px;
+		resize: none;
+		border-color: #C0C0C0;
+	}
 </style>
