@@ -12,7 +12,7 @@
 			<span class="act_price">¥1280</span><br />
 			<span class="mendianjia">门店价:</span>
 			<span class="md_price">¥5237</span><br />
-			<a href="###" class="state">去看看</a>
+			<a href="/detail" class="state">去看看</a>
 			<span class="per_num">4567<span class="per_text">人已购买</span></span>			
 		</div>
 		<!--2-->
@@ -26,7 +26,7 @@
 			<span class="act_price">¥1280</span><br />
 			<span class="mendianjia">门店价:</span>
 			<span class="md_price">¥5237</span><br />
-			<a href="###" class="state">去看看</a>
+			<a href="/detail" class="state">去看看</a>
 			<span class="per_num">4567<span class="per_text">人已购买</span></span>			
 		</div>
 		
@@ -41,7 +41,7 @@
 			<span class="act_price">¥1280</span><br />
 			<span class="mendianjia">门店价:</span>
 			<span class="md_price">¥5237</span><br />
-			<a href="###" class="state">去看看</a>
+			<a href="/detail" class="state">去看看</a>
 			<span class="per_num">4567<span class="per_text">人已购买</span></span>			
 		</div>
 	</div>

@@ -758,7 +758,7 @@
 		margin-top: 5px;
 		height: 41px;
 		background-color: #213f7b;
-		z-index:10;
+		z-index:101;
 	}
 	.i_nav_center{
 		width: 976px;
