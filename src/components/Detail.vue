@@ -196,7 +196,7 @@
 		color: red;
 		position: relative;
 		right: 245px;
-		top: 18px;
+		bottom: 20px;
 		font-weight: 500;
 		z-index: 1;
 	}
@@ -205,7 +205,7 @@
 		color: #989c9c;
 		position: relative;
 		left: 100px;
-		bottom: 40px;
+		bottom: 50px;
 		z-index: 1;
 	}
 	.md_price{
@@ -213,7 +213,7 @@
 		color: #989c9c;
 		position: relative;
 		left: 100px;
-		bottom: 40.5px;
+		bottom: 50.5px;
 		font-weight: 500;
 		z-index: 1;
 	}
@@ -228,7 +228,7 @@
 		text-align: center;
 		color: white;
 		position: relative;
-		bottom: 95px;
+		bottom: 345px;
 		left: 120px;
 		z-index: 1;
 	}
@@ -237,7 +237,7 @@
 		height: 255px;
 		position: relative;
 		left: 171px;
-		bottom: 86px;
+		bottom: 95px;
 		
 	}
 	.buying{
@@ -246,7 +246,7 @@
 		border: 1px solid #C5C5C5;
 		background-color: #eeeeee;
 		position: relative;
-		bottom: 288px;
+		bottom: 313px;
 	}
 	.qg,.per_num{
 		width: 213px;
