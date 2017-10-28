@@ -6,11 +6,14 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
+<<<<<<< HEAD
 			<name>com.aptana.editor.php.aptanaPhpBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+=======
+>>>>>>> 17042d686fcec06936ee5a397a1549d17377a78c
 			<name>com.aptana.ide.core.unifiedBuilder</name>
 			<arguments>
 			</arguments>
@@ -18,11 +21,22 @@
 	</buildSpec>
 	<natures>
 		<nature>com.aptana.projects.webnature</nature>
+<<<<<<< HEAD
 		<nature>com.aptana.editor.php.phpNature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
 			<id>1509066921623</id>
+=======
+	</natures>
+	<filteredResources>
+		<filter>
+<<<<<<< Updated upstream
+			<id>1509065487153</id>
+=======
+			<id>1509067083064</id>
+>>>>>>> Stashed changes
+>>>>>>> 17042d686fcec06936ee5a397a1549d17377a78c
 			<name></name>
 			<type>26</type>
 			<matcher>
