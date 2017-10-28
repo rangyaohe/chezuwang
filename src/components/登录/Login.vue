@@ -44,7 +44,7 @@
 				<button class="phone_msg">免费获取手机动态码</button>
 				<span class="time_pro">已发送,1分钟后可重新获取</span><br />
 				动态码:
-				<input type="text" />
+				<input type="text" class="phone_msg_num_input"/>
 				<span class="pro_msg">请输入收到的手机动态码</span>
 			</div>
 			<div class="log_phon_rem">
@@ -93,6 +93,8 @@
 					</a>
 				</div>
 			</div>
+			<!--<h1>{{this.$store.state.userMsg.name}}</h1>
+			<h1>{{this.$store.state.userMsg.phonnum}}</h1>-->
 		</div>
 	</div>
 </template>
@@ -126,22 +128,7 @@
 			
 		},
 		mounted(){
-			$(document).click(function(){
-				$.ajax({
-					type:"post",
-					url:"api/login",
-					data:{
-						name:"ikkkklk",
-						way:"password",
-						age:10
-					},
-					dataType:"json"
-//					success:function (data) {
-//						alert(data);
-//						console.log(data)
-//                  }
-				});
-			})
+			var _this=this;
 			//定义一个函数,在页面加载时查看是否有缓存,如果有的话添加到输入框中
 			$(".accIput").val(localStorage.account);
 			$(".pasIput").val(localStorage.passwords);
@@ -167,22 +154,42 @@
 				_this.phobol=!_this.phobol
 			})
 			//短信倒计时
+			var rannum = 0;//定义短信验证码的初始值
 			$(".phone_msg").click(function(){
-				$(".time_pro").css("display","inline-block")
-				$(".phone_msg").html("重新获取(59)");
-				$(".phone_msg").attr("disabled","true")
-				var time1 = setInterval(function(){
-					_this.time--;
-					$(".phone_msg").html("重新获取("+_this.time+")");
-					if(_this.time<=0){
-						$(".phone_msg").html("重新获取");
-						clearInterval(time1);
-						_this.time=5;
-						$(".phone_msg").removeAttr("disabled")
-					}
-				},1000)
+				$.ajax({
+					type:"post",
+					url:"http://localhost:8000/api/login",
+					data:{
+						way:"phone",
+						phonenum:$(".phoIput").val(),
+					},
+					dataType:"json",
+					success:function (data) {
+						if(data.err){
+							rannum = data.msg;
+							console.log(rannum)
+							//手机号存在,开始倒计时
+							$(".time_pro").css("display","inline-block")
+							$(".phone_msg").html("重新获取(59)");
+							$(".phone_msg").attr("disabled","true")//不可以点
+							var time1 = setInterval(function(){
+								_this.time--;
+								$(".phone_msg").html("重新获取("+_this.time+")");
+								if(_this.time<=0){
+									$(".phone_msg").html("重新获取");
+									clearInterval(time1);
+									_this.time=5;
+									$(".phone_msg").removeAttr("disabled")//可以点
+								}
+							},1000)
+						}else{
+							alert("手机号不存在")
+						}
+                    }
+				});
+				
 			})
-			//普通登录
+			//账号密码
 			$(".login_mon_btn").click(function(){
 				//判断是否记住账号
 				if(_this.accbol){
@@ -196,11 +203,25 @@
 				}else{
 					window.localStorage.removeItem(["passwords"]);
 				}
-				alert("登录成功")
 				$.ajax({
 					type:"post",
-					url:"api/",
-					async:true
+					url:"http://localhost:8000/api/login",
+					data:{
+						way:"password",
+						name:$(".accIput").val(),
+						password:$(".pasIput").val(),
+					},
+					dataType:"json",
+					success:function (data) {
+						console.log(data)
+						if(data.err){//登录成功
+							alert(data.msg);
+							//改变登录状态
+							_this.$store.state.userMsg.name=$(".accIput").val();
+							_this.$store.state.userMsg.loginState=1;
+							_this.$store.state.enroll="退出"
+						}
+                    }
 				});
 			})
 			//手机登录
@@ -211,7 +232,24 @@
 				}else{
 					window.localStorage.removeItem(["phone"]);
 				}
-				alert("登录成功")
+				if ($(".phone_msg_num_input").val()==rannum) {
+					alert("登录成功");
+					//改变登录状态
+					_this.$store.state.userMsg.phonnum=$(".phoIput").val();
+					_this.$store.state.userMsg.loginState=1;
+					window.sessionStorage.loginState = 1;
+					window.sessionStorage.phonenum = $(".phoIput").val()
+					//发送ajax 改变此账户的登录状态
+					$.ajax({
+						type:"post",
+						url:"http://localhost:8000/api/loginstate",
+						async:true,
+						data:{
+							loginstate:true,
+							phonenum:$(".phoIput").val()
+						}
+					});
+				}
 			})
 		}
 	}

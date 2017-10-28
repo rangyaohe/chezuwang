@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App'
-
+import Vuex from 'vuex'
+import store from './store'//vuex
 import Maincont from './components/Main-cont'
-//import Maintitle from './components/导航栏/Main-title'
-//import Mainfoot from './components/导航栏/Main-foot'
 import Keyt from './components/导航栏/Key-t'
 import Keyd from './components/导航栏/Key-d'
 import Keyq from './components/导航栏/Key-q'
@@ -37,6 +36,10 @@ import Chit from './components/我的车族/Mycar-chit'
 import Score from './components/我的车族/Mycar-score'
 import Set from './components/我的车族/Mycar-set'
 import Indent from './components/我的车族/Mycar-indent'
+//引swiper
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+Vue.use(VueAwesomeSwiper)
+
 Vue.use(VueRouter)
 Vue.config.productionTip = false
 
@@ -172,6 +175,7 @@ const router = new VueRouter({
 })
 new Vue({
 	router,
+	store,//使用store
 	template: "<App/>",
 	components: {
 		App

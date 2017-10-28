@@ -127,11 +127,11 @@
 //			$(document).click(function(){
 //				$.ajax({
 //					type:"get",
-//					url:"api/sigin",
+//					url:"http://localhost:8000/api/sigin",
 //					data:{
 //						way:"email",
-//						name:"十7",
-//						password:"123",
+//						name:"啪啪啪",
+//						password:"654654",
 //						phonenum:"666",
 //						email:"15989878@qq.com",
 //						havecar:1,

@@ -41,7 +41,13 @@
 </template>
 <script>
 	export default{
-		name:"success"
+		name:"success",
+		mounted(){
+			var _this=this;
+			$(document).click(function(){
+//				alert(_this.$store.state.userMsg.loginState)
+			})
+		}
 	}
 </script>
 <style scoped lang="scss">

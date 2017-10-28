@@ -128,8 +128,9 @@
 			return{}
 		},
 		mounted(){
-			$("h1").click(function(){
-				alert("1")
+			var _this=this;
+			$(document).click(function(){
+//				alert(_this.$store.state.userMsg.loginState)
 			})
 		}
 	}

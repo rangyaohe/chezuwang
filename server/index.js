@@ -22,7 +22,7 @@ app.post("/login",urlencodeParser,function (req,res) {
             }
         })
     }
-    if(account_msg.way=="password"){
+    if(account_msg.way=="phone"){//手机号验证码登录
         let sql = "select * from car1 where phonenum=''"
         connection.query(sql,function (err,doc) {
             if(err){//登录失败

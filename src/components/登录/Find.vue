@@ -43,7 +43,6 @@
 </template>
 
 <script>
-	import "./find.css"
 	export default{
 		name:"Find",
 		mounted(){

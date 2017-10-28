@@ -228,7 +228,7 @@
 						<router-link to="" class="i_browse">最近浏览</router-link>
 						<router-link to="/mycar/indent" class="i_vehicles">我的车族</router-link>
 						<router-link to="/login" class="i_enter">登录</router-link>
-						<router-link to="/signin" class="i_enroll">注册</router-link>
+						<router-link to="/signin" class="i_enroll">{{this.$store.state.enroll}}</router-link>
 						<span class="i_lineA"></span>
 						<span class="i_lineB"></span>
 						<span class="i_lineC"></span>
